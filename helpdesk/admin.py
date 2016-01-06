@@ -6,6 +6,7 @@ from helpdesk.models import EscalationExclusion, EmailTemplate, KBItem
 from helpdesk.models import TicketChange, Attachment, IgnoreEmail
 from helpdesk.models import CustomField
 from helpdesk.models import QueueMembership, UserSettings
+from helpdesk.models import DocumentationApp, DocumentationAppAdmin, FAQ, FAQAdmin
 
 class QueueAdmin(admin.ModelAdmin):
     list_display = ('title', 'slug', 'email_address', 'locale')
@@ -57,5 +58,8 @@ admin.site.register(KBCategory)
 admin.site.register(KBItem, KBItemAdmin)
 admin.site.register(IgnoreEmail)
 admin.site.register(CustomField, CustomFieldAdmin)
-admin.site.register(UserSettings)
+admin.site.register(DocumentationApp, DocumentationAppAdmin)
+admin.site.register(FAQ, FAQAdmin)
+
+
 
