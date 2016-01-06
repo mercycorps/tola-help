@@ -531,7 +531,7 @@ def update_ticket(request, ticket_id, public=False):
         else:
             template_staff = 'updated_owner'
 
-        if (not reassigned or ( reassigned and ticket.assigned_to.usersettings.settings.get('email_on_ticket_assign', False))) or (not reassigned and ticket.assigned_to.usersettings.settings.get('email_on_ticket_change', False)):
+        if not reassigned:
             send_templated_mail(
                 template_staff,
                 context,
@@ -1224,23 +1224,6 @@ def delete_saved_query(request, id):
                 'query': query,
                 }))
 delete_saved_query = staff_member_required(delete_saved_query)
-
-
-def user_settings(request):
-    s = request.user.usersettings
-    if request.POST:
-        form = UserSettingsForm(request.POST)
-        if form.is_valid():
-            s.settings = form.cleaned_data
-            s.save()
-    else:
-        form = UserSettingsForm(s.settings)
-
-    return render_to_response('helpdesk/user_settings.html',
-        RequestContext(request, {
-            'form': form,
-        }))
-user_settings = staff_member_required(user_settings)
 
 
 def email_ignore(request):

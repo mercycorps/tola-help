@@ -321,3 +321,21 @@ WSGI_APPLICATION = '%s.wsgi.application' % SITE_NAME
 ########## END WSGI CONFIGURATION
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+HELPDESK_DEFAULT_SETTINGS = {
+        'use_email_as_submitter': True,
+        'email_on_ticket_assign': True,
+        'email_on_ticket_change': True,
+        'login_view_ticketlist': True,
+        'email_on_ticket_apichange': True,
+        'tickets_per_page': 25
+        }
+
+DEFAULT_USER_SETTINGS = {
+        'use_email_as_submitter': True,
+        'email_on_ticket_assign': True,
+        'email_on_ticket_change': True,
+        'login_view_ticketlist': True,
+        'email_on_ticket_apichange': True,
+        'tickets_per_page': 25
+        }

@@ -47,10 +47,6 @@ DATABASES = {
 
 ########## END DATABASE CONFIGURATION
 
-AUTHENTICATION_BACKENDS = (
-    'ldaplogin.ldapauth.RemoteUserBackend',
-    'django.contrib.auth.backends.ModelBackend',
-)
 
 
 ########## CACHE CONFIGURATION
@@ -61,6 +57,20 @@ CACHES = {
     }
 }
 ########## END CACHE CONFIGURATION
+
+########### HACKPAD
+HACKPAD_CLIENT_ID = ""
+HACKPAD_SECRET = ""
+
+########## GITHUB
+GITHUB_AUTH_TOKEN = ""
+GITHUB_REPO_1 = "https://api.github.com/repos/"
+GITHUB_REPO_2 = "https://api.github.com/repos/"
+
+########## GOOGLE AUTH
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ""
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ""
+
 
 ########## EMAIL SETTINGS
 
